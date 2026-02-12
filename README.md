@@ -1,15 +1,21 @@
 # QuickBill-Py
-Python, GUI based application created in order to create bills easier. We know that most of the wholesale shopkeepers are unable to keep up with their bills and hence this is an app which is created in order to solve such problem. Taken example of a general store, this app takes all the item list from a file along with their prices and save them which can be accessed in the future.
+A lightweight, GUI-based desktop application designed to streamline the billing process for small businesses and wholesale shopkeepers. Many local vendors struggle with manual bookkeeping; this app automates invoice generation by pulling inventory data from a structured JSON file, allowing for quick, error-free transactions.
+
+## Features
+- **Automated Inventory Loading**: Reads items and pricing directly from a JSON configuration file for easy updates.
+- **Smart Quantity Handling**: Supports custom quantities for each item, defaulting to 1 for rapid entry.
+- **Sequential Invoice Tracking**: Automatically increments invoice numbers to ensure record consistency.
+- **Dynamic File Organization**: Generates and saves text-based invoices into auto-generated folders organized by Date, Month, and Year.
+- **Zero-Config Timestamping**: Uses system time to timestamp every bill automatically, reducing manual data entry.
 
 ## Required Packages 💻
-Tkinter, OS, Datetime & JSON
+- **Tkinter**: For the graphical user interface.
+- **JSON**: For persistent data storage of items and prices.
+- **OS & Datetime**: For automated file system management and time-stamping.
+  
+🚀 Future Roadmap
+While the current version meets all immediate requirements for local shop management, potential future enhancements could include:
+- Export to PDF: Converting .txt invoices into professional PDF formats.
+- Analytics Dashboard: A simple view to track daily or monthly sales totals.
+- SQLite Integration: For handling larger inventories more efficiently.
 
-## Features ✨
-1. You just need to add items that you sell along with their prices inside the json file in the same format as in the example.
-2. Then the app will run successfully!
-3. While using the app, you can add quantity of a particular item otherwise, by default it's 1.
-4. The invoice number is increamented automatically as soon as you fill all the required details and save it.
-5. The app will automatically create a txt file (invoice number as name) in a folder of the current date along with month and year too. The app automatically scans the current date and time, so you needn't worry about doing anything.
-
-## Future Plans 🪐
-No further plans for this project as it's built upto the requirement.
