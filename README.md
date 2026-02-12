@@ -1,4 +1,4 @@
-# Bill Invoice Register App
+# QuickBill-Py
 Python, GUI based application created in order to create bills easier. We know that most of the wholesale shopkeepers are unable to keep up with their bills and hence this is an app which is created in order to solve such problem. Taken example of a general store, this app takes all the item list from a file along with their prices and save them which can be accessed in the future.
 
 ## Required Packages 💻
