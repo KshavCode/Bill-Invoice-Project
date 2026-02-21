@@ -1,3 +1,6 @@
+## 📲 Download
+[![Latest Release](https://img.shields.io/github/v/release/KshavCode/arsd-saathi-app?include_prereleases&label=Latest%20APK&color=blue)](https://github.com/KshavCode/quickbill-py/releases/latest)
+
 # QuickBill-Py
 A lightweight, GUI-based desktop application designed to streamline the billing process for small businesses and wholesale shopkeepers. Many local vendors struggle with manual bookkeeping; this app automates invoice generation by utilizing a local SQLite database for robust inventory management and secure transaction history, allowing for quick, error-free, and trackable sales.
 
