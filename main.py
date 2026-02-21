@@ -35,18 +35,13 @@ class InvoiceApp:
         """Creates necessary folders and default files if they don't exist to prevent crashes."""
         self.docs_dir = Path("Docs")
         self.docs_dir.mkdir(exist_ok=True)
+    
+        self.items_prices_file = self.docs_dir / "prices.json"
         
-        self.items_file = self.docs_dir / "items.txt"
-        self.prices_file = self.docs_dir / "prices.json"
-        
-        # Create dummy data if missing
-        if not self.items_file.exists():
-            with open(self.items_file, "w") as f:
-                f.write("None\nApple\nBanana\nOrange\nMilk\nBread")
-                
-        if not self.prices_file.exists():
+        # Create dummy data if missing          
+        if not self.items_prices_file.exists():
             default_prices = {"price": {"Apple": 20.0, "Banana": 10.0, "Orange": 15.0, "Milk": 50.0, "Bread": 40.0}}
-            with open(self.prices_file, "w") as f:
+            with open(self.items_prices_file, "w") as f:
                 json.dump(default_prices, f, indent=4)
                 
         # Setup today's invoice folder
@@ -58,15 +53,14 @@ class InvoiceApp:
     def load_data(self):
         """Loads items and prices into memory once at startup."""
         try:
-            with open(self.items_file, "r") as f:
-                self.item_list = [line.strip() for line in f.readlines() if line.strip()]
-            
-            with open(self.prices_file, "r") as f:
-                self.prices_dict = json.load(f).get("price", {})
+            with open(self.items_prices_file, "r") as f:
+                self.prices_dict = json.load(f).get("price")
+                self.prices_dict["None"] = 0
+                self.item_list = list(self.prices_dict.keys())
         except Exception as e:
             messagebox.showerror("Data Error", f"Could not load items/prices: {e}")
+            self.prices_dict = {"None": 0}
             self.item_list = ["None"]
-            self.prices_dict = {}
 
     def setup_invoice_number(self):
         """Initializes or reads the current invoice number."""
